@@ -55,7 +55,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"
-    className='text-gray-900/75 bg-white dark:text-white dark:bg-[#111010]'
+    className='text-gray-900/75 bg-gray-200/90 dark:text-white dark:bg-[#111010]'
     >
       <body className='antialiased max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto'>
           

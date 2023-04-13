@@ -29,15 +29,15 @@ export default function Home() {
     {/* <Navbar /> */}
     <section className='flex flex-col md:flex-row justify-between items-end border-b-black pb-8 md:pb-12 lg:pb-16 2xl:pb-24'>
       <div className='w-full md:w-6/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
-        <h1 className='mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
+        <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
           Ikechukwu Okoro
           <br className='' />
            <span className=' font-normal mt-2 text-gray-900/50'>I build beautiful & accessable things for the web.</span>
         </h1>
-        <p className='mt-5 xl:mt-8 2xl:mt-10 text-base md:text-lg'>
+        <p className='leading-loose mt-5 xl:mt-8 2xl:mt-10 text-base md:text-lg'>
         "A fresher with experience", this line says exactly who he is. 
         I'm a software engineer with speciality in building (and occasionally reserach, design) cutting edge production ready web apps.
-        I'm focused on research, applications of cutting edge technology to research, re-think, and implementation of accessable, human-centered products using <strong className='text-indigo-900/80 cursor-pointer'>Vercel</strong> stack.
+        I'm focused on research, re-think & implemenation of cutting edge techonlogies for humananity accessibility and consumption.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export default function Home() {
     </section>
 
 
-    <section className='mt-28 pb-16'>
+    <section className='mt-28 pb-16 leading-loose'>
       <HeaderSmall number='01' text='About me' />
 
       <p>I enjoy creating things that live on the internet.
@@ -76,8 +76,8 @@ export default function Home() {
     </section>
 
 
-    <section className='mt-28'>
-      <HeaderSmall number='02' text='Specialization' />
+    <section className='mt-28 leading-loose'>
+      <HeaderSmall number='02' text='Skills' />
 
       <p>Here's a few tech I choose to specialize and work with recently:
       </p>
