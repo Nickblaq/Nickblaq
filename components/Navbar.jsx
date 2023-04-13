@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <>
             <nav className="w-full flex justify-between items-center pt-10 lg:pt-16 2xl:pt-24 pb-10 lg:pb-32 2xl:pb-40">
-            <p className="text-xl 2xl:text-2xl font-black gradient-text">
+            <p className="text-xl md:text-2xl lg:text-4xl font-black gradient-text">
                 NickblaQ 
             </p>
             <Mail className="w-10 h-10 " />

@@ -9,6 +9,8 @@ import Navbar from '@/components/Navbar';
 import SkillsIcons from '@/components/skills-icon';
 import SkillName from '@/components/skills-name';
 import skills from "@/utils/skills";
+import HeaderSmall from '@/components/header-small';
+import Footer from '@/components/footer';
 
 export default function Home() {
   
@@ -24,15 +26,18 @@ export default function Home() {
     <>
     <div className='container mx-auto'>
     <main className="mx-auto w-full">
-    <Navbar />
+    {/* <Navbar /> */}
     <section className='flex flex-col md:flex-row justify-between items-end border-b-black pb-8 md:pb-12 lg:pb-16 2xl:pb-24'>
       <div className='w-full md:w-6/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
         <h1 className='mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
-          The software developer who combine various tech stacks to crafts beautiful & accessable web apps.
+          Ikechukwu Okoro
+          <br className='' />
+           <span className=' font-normal mt-2 text-gray-900/50'>I build beautiful & accessable things for the web.</span>
         </h1>
         <p className='mt-5 xl:mt-8 2xl:mt-10 text-base md:text-lg'>
         "A fresher with experience", this line says exactly who he is. 
-        I'm a software developer helping tech-constrained teams access, prototype & bring web apps to live.
+        I'm a software engineer with speciality in building (and occasionally reserach, design) cutting edge production ready web apps.
+        I'm focused on research, applications of cutting edge technology to research, re-think, and implementation of accessable, human-centered products using <strong className='text-indigo-900/80 cursor-pointer'>Vercel</strong> stack.
         </p>
       </div>
 
@@ -51,62 +56,42 @@ export default function Home() {
     </section>
 
 
+    <section className='mt-28 pb-16'>
+      <HeaderSmall number='01' text='About me' />
 
-    <section className='flex flex-col md:flex-row md:justify-between md:items-end border-b-black pb-8 md:pb-12 lg:pb-16 2xl:pb-24'>
-      <div className='w-full md:w-5/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
-        <h1 className='mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0'>
-          What does he do?
-        </h1>
-        <p className='mt-5 xl:mt-8 2xl:mt-10'>
-        He creates elegant, accessable, logical cross screen web mobile app solutions. In his hobby time, he
-                read,research and cooks.
-        </p>
-      </div>
-      <div className='md:w-7/12 '>
-        <div className='md:flex hidden w-full items-end justify-center`'>
-        <SkillsIcons />
-        </div>
-        <div className='md:hidden block'>
-        {skills.map(({ idx,  name }) => {
-        return <>
-           <SkillName key={idx} name={name} />
-           </>
-      })}
+      <p>I enjoy creating things that live on the internet.
+        My interest in web dev started back in 2019 when I decided to tey out this 2 weeks bootcamp, turns out I had obsession
+        obsession and interest in understanding how thw eb technologies under the hood. 
+        Tools like HTML, CSS and JAVASCRIPT can be used web apps.
+      </p>
 
-     
-        </div>
-      </div>
+      <p>After years of study, practice, I found myself privilaged of working on some amazing projects, consulting and learning more.
+      </p>
+
+      <p>Fast forward to 2023, I found decided to have a "hard reset" on my approach to web technologies.
+        With React 18, we are forced to rethink how modern web apps can be built.
+         </p>
+
+         <p>Specializing in Using NextJS framework to re-achitect, implement better products.</p>
     </section>
 
 
-    <section className='flex flex-col md:flex-row justify-between border-black border-t pb-8 md:pb-12 lg:pb-16 2xl:pb-24'>
-    <div className='w-full md:w-7/12 pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10 items-start'>
-        <h1 className='mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0'>
-         Peace of mind
-        </h1>
-      </div>
-      <div className='md:w-5/12 w-full'>
-        <div className=''>
-        <p className='mt-5 xl:mt-8 2xl:mt-10'>
-        He creates elegant, accessable, logical cross screen web mobile app solutions. In his hobby time, he
-                read,research and cooks.
-        </p>
-        <p className='mt-5 xl:mt-8 2xl:mt-10'>
-        Are you having difficulty delivering experiential marketing campaigns that involve custom technology? Whether it's flaky vendors, unpredicable costs or lengthy lead times, delivering tech projects beyond simple Wordpress sites is hard.
-        </p>
-        <p className='mt-5 xl:mt-8 2xl:mt-10'>
-        I can help you take the guesswork & uncertainty out of the process by answering the important questions.
-        </p>
-        </div>
-        
-        <ul className=' list-disc list-inside py-8'>
-          <li><strong>What are we going to do?</strong><p>If you've got pitches looming but short on ideas, I'm here to help generate new ideas or provide easy-wins that are guaranteed to work.</p></li>
-        </ul>
-      </div>
+    <section className='mt-28'>
+      <HeaderSmall number='02' text='Specialization' />
+
+      <p>Here's a few tech I choose to specialize and work with recently:
+      </p>
+
+      <p>Javascript, Typescript, Tailwind, MDX, NextJS (a powerful web framework).
+      </p>.
+
+         <p>Curious? Blog coming up, join the waitlist now!.</p>
     </section>
+
+    {/* <Footer /> */}
+
     </main>
     </div>
-   {/* <h1 className='text-red-500 text-xl' style={{fontFamily: inter}}>Hello World</h1> */}
     </>
   )
 }
