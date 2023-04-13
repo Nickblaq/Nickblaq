@@ -32,12 +32,12 @@ export default function Home() {
         <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
           Ikechukwu Okoro
           <br className='' />
-           <span className=' font-normal mt-2 text-gray-900/50'>I build beautiful & accessable things for the web.</span>
+           <span className=' font-normal mt-2 text-gray-900/50 dark:text-red-200/50'>I build beautiful & accessable things for the web.</span>
         </h1>
         <p className='leading-loose mt-5 xl:mt-8 2xl:mt-10 text-base md:text-lg'>
         "A fresher with experience", this line says exactly who he is. 
-        I'm a software engineer with speciality in building (and occasionally reserach, design) cutting edge production ready web apps.
-        I'm focused on research, re-think & implemenation of cutting edge techonlogies for humananity accessibility and consumption.
+        I'm a software engineer specialzing in building (and occasionally reserach, design) cutting edge production ready web apps.
+        I'm focused on research, re-think & implemenation of cutting edge web techonlogies for humananity accessibility and consumption.
         </p>
       </div>
 
