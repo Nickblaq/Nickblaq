@@ -71,7 +71,7 @@ export default function Index () {
         <>
          <div className='container mx-auto'>
     <main className="mx-auto w-full">
-        <section id='about-me' className='mt-28 pb-16 leading-loose'>
+        <section id='about-me' className='pt-8 md:pt-12 lg:pt-16 pb-8 leading-loose'>
        <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
           Skills
         </h1>
