@@ -23,6 +23,7 @@ const navItems = {
 function Logo() {
   return (
     <Link aria-label="Ikechukwu Okoro" href="/">
+
       <motion.svg
   className="text-black dark:text-white h-[25px] md:h-[37px]"
   width="25"
@@ -57,7 +58,7 @@ function Logo() {
       type: 'spring',
       stiffness: 50,
     }}
-    d="M64 285L164 55L202 126L127 285H64Z"
+    d="M232 316V0H198V258L36 0H0V316H36L198 58V316H232Z"
     fill="currentColor"
   />
 </motion.svg>
