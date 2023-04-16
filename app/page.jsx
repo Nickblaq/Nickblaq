@@ -58,26 +58,6 @@ export default function Home() {
     </section>
 
 
-    <section id='about-me' className='mt-28 pb-16 leading-loose'>
-      <HeaderSmall number='01' text='About me' />
-
-      <p>I enjoy creating things that live on the internet.
-        My interest in web dev started back in 2019 when I decided to try out this 2 weeks bootcamp, turns out I had
-        obsession and interest in understanding how web technologies work under the hood. 
-        Tools like HTML, CSS and JAVASCRIPT can be used to create web apps.
-      </p>
-
-      <p>After years of study, practice, I found myself privilaged of working on some amazing projects, consulting and learning more.
-      </p>
-
-      <p>Fast forward to 2023, I found decided to have a "hard reset" on my approach to web technologies.
-        With React 18, we are forced to rethink how modern web apps can be built.
-         </p>
-
-         <p>Specializing in Using NextJS framework to re-achitect, implement better low cost, hoot boot, low latency serverless web apps.</p>
-    </section>
-
-
     <section id='skills' className='mt-28 leading-loose'>
       <HeaderSmall number='02' text='Skills' />
 
