@@ -24,7 +24,7 @@ function Logo() {
   return (
     <Link aria-label="Ikechukwu Okoro" href="/">
 
-      <motion.svg
+<motion.svg
   className="text-black dark:text-white h-[25px] md:h-[37px]"
   width="25"
   height="37"
@@ -58,7 +58,7 @@ function Logo() {
       type: 'spring',
       stiffness: 50,
     }}
-    d="M29 316V0H0V316H36L198 100V316H232V0H202L40 216V0H6V316H29Z"
+    d="M232 316V0H180V186L52 0H0V316H52L180 128V316H232Z"
     fill="currentColor"
   />
 </motion.svg>
