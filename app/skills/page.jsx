@@ -82,9 +82,9 @@ export default function Index () {
       {
         skills.map((data) => {
           return (
-            <ul className="list-outside list-disc pt-8">
-            <li key={data.id} className="flex flex-col gap-6">
-            <h2 className=" font-medium text-xl md:text-2xl">{data.item}</h2>
+            <ul key={data.id}  className="list-outside list-disc pt-8">
+            <li className="flex flex-col md:flex-row md:items-center gap-6">
+            <h2 className="text-left font-medium text-xl md:text-2xl">{data.item}</h2>
             <p>{data.desc}</p>
           </li>
           </ul>
