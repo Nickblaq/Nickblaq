@@ -58,7 +58,7 @@ function Logo() {
       type: 'spring',
       stiffness: 50,
     }}
-    d="M232 316V0H180V186L52 0H0V316H52L180 128V316H232Z"
+    d="M24 0H0V316H24V142L176 316H204V0H176V174L24 0Z"
     fill="currentColor"
   />
 </motion.svg>
