@@ -6,22 +6,23 @@ export default function index () {
         <>
          <div className='container mx-auto transition-all duration-500'>
     <main className="mx-auto w-full">
-        <section id='about-me' className='pt-8 md:pt-12 lg:pt-16 pb-8 leading-loose'>
-       <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
+      <div className="pt-8 md:pt-12 lg:pt-16 pb-8">
+    <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
           About Me
         </h1>
+        <section id='about-me' className='leading-10'>
 
-        <p>I'm Nicholas. Most folks know me as <strong>I.K</strong> online.
+        <p className="[&:not(:first-child)]:my-8">My name is Nicholas. Most folks know me as <strong>Nickblaq</strong> online.
       </p>
 
       <p>I enjoy creating beautiful things that live on the internet.
         My interest in web dev started back in 2019 when I decided to try out this 2 weeks bootcamp, turns out I had
         obsession and interest in understanding how web technologies work under the hood. 
         Fundermentals like HTML, CSS, JAVASCRIPT, NODEJS, GIT and how they connect and work was my core focus, with educational courses from the tech community, took me time
-        to time, dedication, consistency & my passion to be so world class engineer.
+        to time, dedication, consistency &amp; my passion to be so world class engineer.
         </p>
 
-      <p>After years of study & practice, I found myself privilaged working with a vast spectrum of web technologies what let me gather a significant amount of various experience
+      <p>After years of study &amp; practice, I found myself privilaged working with a vast spectrum of web technologies what let me gather a significant amount of various experience
          on some amazing projects, consulting and learning more.
       </p>
 
@@ -37,6 +38,7 @@ export default function index () {
             Current focused on using NEXTJS framework to re-achitect, implement better single codebase with aimed at achieving low cost, hoot boot, low latency, serverside, serverless and more for modern web apps.
             </p>
     </section>
+    </div>
     </main>
     </div>
         </>

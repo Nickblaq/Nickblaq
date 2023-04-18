@@ -1,4 +1,4 @@
-
+ import HeaderSmall from "@/components/header-small"
 
 const skills = [
 
@@ -71,28 +71,27 @@ export default function Index () {
         <>
          <div className='container mx-auto'>
     <main className="mx-auto w-full">
-        <section id='about-me' className='pt-8 md:pt-12 lg:pt-16 pb-8 leading-loose'>
-       <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
-          Skills
+        <section id='about-me' className='pt-8 md:pt-12 lg:pt-16 pb-8'>
+        <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl  font-semibold tracking-normal transition-colors first:mt-0'>
+          My skills implentations in web development was made possible with this some tools and languages.
         </h1>
-
        <div>
-       <p></p>
-      
+       <h2 className="py-4">I enhanced my web development skills, made workflow smooth, fast and overall better developer experience.
+         some factors were taken into place, i.e community adoption, developer experience.</h2>
+
+       <ul className="list-outside pt-8 text-left space-y-8">
       {
         skills.map((data) => {
           return (
-            <ul key={data.id}  className="list-outside list-disc pt-8">
-            <li className="flex flex-col md:flex-row md:items-center gap-6">
-            <h2 className="text-left font-medium text-xl md:text-2xl">{data.item}</h2>
-            <p>{data.desc}</p>
+
+            <li key={data.id} className="flex flex-col gap-2 md:gap-1 md:text-left leading-loose">
+              <HeaderSmall number={data.id} text={data.item} />
+            <p className="md:text-xl">{data.desc}</p>
           </li>
-          </ul>
           )
-         
         })
       }
-       
+             </ul>
 
        </div>
     </section>

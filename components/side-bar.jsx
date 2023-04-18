@@ -24,7 +24,7 @@ function Logo() {
   return (
     <Link aria-label="Nicholas Okoro" href="/">
     <motion.svg
-  className="text-black dark:text-white h-[25px] md:h-[37px]"
+  className="text-indigo-500 h-[25px] md:h-[37px]"
   width="25"
   height="37"
   viewBox="0 0 232 316"
