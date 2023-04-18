@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Nicholas Okoro portfolio',
     description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
     url: 'https://nickblaq.xyz',
-    siteName: 'Nicholas Okoro',
+    siteName: 'Nicholas Okoro portfolio',
     images: [
       {
         url: 'https://nickblaq.xyz/og.png',
