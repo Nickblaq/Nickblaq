@@ -56,20 +56,6 @@ export default function Home() {
       </ul>
       </div>
     </section>
-
-
-    <section id='skills' className='mt-28 leading-loose'>
-      <HeaderSmall number='02' text='Skills' />
-
-      <p>Here's a few tech I choose to specialize and work with recently:
-      </p>
-
-      <p>Javascript, Typescript, Tailwind, MDX, NextJS (a powerful web framework), NodeJS, Git, Database
-      </p>.
-
-<p>Curious? Blog coming up soon!.</p>
-    </section>
-
     </main>
     </div>
     </>
