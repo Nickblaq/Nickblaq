@@ -12,8 +12,8 @@ const navItems = {
   '/about': {
     name: 'About',
   },
-  '/skills': {
-    name: 'Skills',
+  '/expertise': {
+    name: 'Expertise',
   },
   '/blog': {
     name: 'Blog',
@@ -93,7 +93,7 @@ export default function Sidebar() {
                       'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
                       {
                         'text-neutral-500': !isActive,
-                        'font-bold': isActive,
+                        'font-bold ': isActive,
                       }
                     )}
                   >

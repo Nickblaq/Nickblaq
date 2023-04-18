@@ -1,7 +1,15 @@
 import '@/styles/globals.css'
-import { Bodoni_Moda } from 'next/font/google'
+import { Bodoni_Moda as Moda } from 'next/font/google'
 import Sidebar from '@/components/side-bar'
+import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
+import clsx from 'clsx';
+
+const ModaFont = Moda({
+  variable: "--font-moda",
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export const metadata = {
   title: 'Nicholas Okoro',
@@ -13,7 +21,7 @@ export const metadata = {
     siteName: 'Nicholas Okoro',
     images: [
       {
-        url: 'https://nickblaq.xyz/og.jpg',
+        url: 'https://nickblaq.xyz/og.png',
         width: 1920,
         height: 1080,
       },
@@ -37,7 +45,7 @@ export const metadata = {
     card: 'summary_large_image',
   },
   icons: {
-    shortcut: '/favicon.ico',
+    shortcut: '/favicon.svg',
   },
   verification: {
     google: '',
@@ -49,13 +57,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"
-    className='text-gray-900/75 bg-gray-200/90 dark:text-white dark:bg-[#111010]'
+    className={clsx(
+      'text-gray-900/75 bg-gray-200/90 dark:text-white dark:bg-[#111010]',
+      ModaFont.variable
+    )}
     >
       <body className='antialiased max-w-6xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto h-screen'>
           
       <Sidebar />
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0 ">
           {children}
+          <Footer />
           <Analytics />
         </main>
         </body>
