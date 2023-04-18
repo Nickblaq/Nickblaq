@@ -1,25 +1,19 @@
 import '@/styles/globals.css'
 import { Bodoni_Moda } from 'next/font/google'
 import Sidebar from '@/components/side-bar'
-// export const metadata = {
-//   title: 'Nickblaq | Personaal Portfolio',
-//   description: 'Nickblaq personal portfolio built on nextjs and tailwindcss',
-// }
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
-  title: {
-    default: '',
-    template: '',
-  },
-  description: '',
+  title: 'Nicholas Okoro',
+  description: 'Fronten Software Eng. | I create beautiful things on the web',
   openGraph: {
-    title: '',
-    description: '.',
-    url: 'https://siteurl',
-    siteName: '',
+    title: 'Nicholas Okoro',
+    description: 'Nicholas | Developer, Writer, Creator',
+    url: 'https://nickblaq.xyz',
+    siteName: 'Nicholas Okoro',
     images: [
       {
-        url: 'https://yoursite/og.jpg',
+        url: 'https://nickblaq.xyz/og.jpg',
         width: 1920,
         height: 1080,
       },
@@ -39,8 +33,8 @@ export const metadata = {
     },
   },
   twitter: {
-    title: '',
-    card: '',
+    title: 'nickblaq',
+    card: 'summary_large_image',
   },
   icons: {
     shortcut: '/favicon.ico',
@@ -62,7 +56,7 @@ export default function RootLayout({ children }) {
       <Sidebar />
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">
           {children}
-          
+          <Analytics />
         </main>
         </body>
     </html>

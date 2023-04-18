@@ -11,7 +11,7 @@ export default function index () {
           About Me
         </h1>
 
-        <p>I'm Ikechukwu. Most folks know me as <strong>I.K</strong> online.
+        <p>I'm Nicholas. Most folks know me as <strong>I.K</strong> online.
       </p>
 
       <p>I enjoy creating beautiful things that live on the internet.

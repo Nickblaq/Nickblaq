@@ -32,14 +32,14 @@ export default function Home() {
     <section id='home' className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
       <div className='w-full md:w-6/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
         <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0'>
-          Ikechukwu Okoro
+          Nicholas Okoro
           <br className='' />
            <span className=' font-normal mt-2 text-gray-900/50 dark:text-red-200/50'>I build beautiful & accessable things for the web.</span>
         </h1>
         <p className='leading-loose mt-5 xl:mt-8 2xl:mt-10 text-base md:text-lg'>
         "A fresher with experience", this line says exactly who he is. 
-        I'm a software engineer specialzing in building (and occasionally reserach, design) cutting edge production ready web apps.
-        I'm focused on research, re-think & implemenation of cutting edge web techonlogies for humananity accessibility and consumption.
+        A <strong> Frontend Software Engineer </strong> specializes in creating (and occasionally reserach, design) cutting edge production ready web apps.
+        Focused on research, re-think, re-learn & implemenation of cutting edge web techonlogies for human accessibility and consumption.
         </p>
       </div>
 
