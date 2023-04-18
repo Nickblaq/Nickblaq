@@ -13,12 +13,12 @@ const ModaFont = Moda({
 
 export const metadata = {
   title: 'Nicholas Okoro',
-  description: 'Fronten Software Eng. | I create beautiful things on the web',
+  description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
   openGraph: {
-    title: 'Nicholas Okoro',
-    description: 'Nicholas | Developer, Writer, Creator',
+    title: 'Nicholas Okoro portfolio',
+    description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
     url: 'https://nickblaq.xyz',
-    siteName: 'Nicholas Okoro',
+    siteName: 'Nickblaq',
     images: [
       {
         url: 'https://nickblaq.xyz/og.png',
