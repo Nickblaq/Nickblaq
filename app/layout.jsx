@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en"
     className={clsx(
-      'text-gray-900/75 bg-gray-200/90 dark:text-white dark:bg-[#111010]',
+      'text-gray-900/75 bg-yellow-700/5 dark:text-white dark:bg-[#111010]',
       ModaFont.variable
     )}
     >

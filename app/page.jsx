@@ -85,12 +85,9 @@ Overall, I am a highly skilled &amp; dedicated Frontend Software Engineer, commi
                 {data.icon}
               </a>
             </li>
-        
-          
           }
             </>
           )
-        
         })
       }
       </ul>
