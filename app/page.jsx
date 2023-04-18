@@ -61,8 +61,8 @@ export default function Home() {
             I create beautiful &amp; accessable things for the web.</p>
         </h1>
         <h2 className='leading-loose tracking-wider mt-5 xl:mt-8 2xl:mt-10 text-base md:text-xl'>
-        As a dedicated <strong>Frontend Software Engineer</strong>, I specialize in creating cutting-edge, production-ready web applications. My expertise lies in designing &amp; building visually appealing &amp; user-friendly web applications that are both functional &amp; accessible. I am committed to staying up-to-date with the latest web development trends &amp; technologies, &amp; I am passionate about creating solutions that make a difference in people's lives.
-With a focus on researching, designing, &amp; implementing innovative web technologies, I am constantly learning, rethinking, &amp; reimagining web development practices to deliver the best possible user experiences. Whether it's developing new features, optimizing performance, or improving accessibility, I approach each project with a mindset of excellence &amp; attention to detail.
+        As a dedicated <strong>Frontend Software Engineer</strong>, I specialize in creating cutting-edge, production-ready web applications. My expertise lies in designing &amp; building visually appealing &amp; user-friendly web applications that are both functional &amp; accessible. I am committed to staying up-to-date with the latest web development trends &amp; technologies &amp; I am passionate about creating solutions that make a difference in people's lives.
+With a focus on researching, designing, &amp; implementing innovative web technologies, I am constantly learning, rethinking, &amp; reimagining web development practices to deliver the best possible user experiences. Whether it's developing new features, optimizing performance or improving accessibility, I approach each project with a mindset of excellence &amp; attention to detail.
 Overall, I am a highly skilled &amp; dedicated Frontend Software Engineer, committed to delivering efficient &amp; high-quality solutions to complex problems.
         </h2>
       </div>
