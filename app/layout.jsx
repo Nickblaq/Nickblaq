@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Nicholas Okoro portfolio',
     description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
     url: 'https://nickblaq.xyz',
-    siteName: 'Nickblaq',
+    siteName: 'Nicholas Okoro',
     images: [
       {
         url: 'https://nickblaq.xyz/og.png',
@@ -41,7 +41,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'nickblaq',
+    title: 'Nickblaq',
     card: 'summary_large_image',
   },
   icons: {
