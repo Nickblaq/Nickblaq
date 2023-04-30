@@ -13,6 +13,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['var(--font-moda)'],
+      },
+      typography: {
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
+          },
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -29,6 +40,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }
 

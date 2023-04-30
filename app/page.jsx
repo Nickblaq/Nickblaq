@@ -75,21 +75,12 @@ Overall, I am a highly skilled &amp; dedicated Frontend Software Engineer, commi
           return (
             <>
             {
-              data.show === true && !data.name === 'Mail' ? 
+              data.show === true && 
            
             <li key={data.id} className='w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 cursor-pointer'>
               <a href={data.link} target="_blank">
                 {data.icon}
               </a>
-            </li>
-            :
-            <li key={data.id} className='w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 cursor-pointer'>
-              <address onClick={(e) => {
-                window.location.href = data.link;
-                e.preventDefault();
-            }}>
-              {data.icon}
-            </address>
             </li>
           }
             </>

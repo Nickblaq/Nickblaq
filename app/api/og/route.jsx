@@ -1,7 +1,5 @@
 import { ImageResponse } from "@vercel/og"
 import { Bodoni_Moda as Moda } from 'next/font/google'
-import { NextRequest } from 'next/server';
-import { ogImageSchema } from "@/utils/og"
 
 export const runtime = "edge"
 
@@ -13,41 +11,55 @@ const ModaFont = Moda({
 })
 
 
-export async function GET(req) {
+export async function GET() {
   try {
     const urlParams = new URLSearchParams;
     const title = urlParams.get('title');
 
     return new ImageResponse(
       (
+
         <div
-          style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            backgroundImage: 'url(https://nickblaq.xyz/og.png)',
-          }}
-        >
-          <div
-            style={{
-              marginLeft: 190,
-              marginRight: 190,
-              display: 'flex',
-              fontSize: 130,
-              fontFamily: ModaFont.variable,
-              letterSpacing: '-0.05em',
-              fontStyle: 'normal',
-              color: 'white',
-              lineHeight: '120px',
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {title}
+        style={{
+          fontFamily: ModaFont.variable,
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'white',
+          backgroundImage: 'url(https://nickblaq.xyz/og.png)',
+        }}
+      >
+        <div tw="bg-gray-50 flex">
+          <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
+            <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
+              <span>Nickblaq</span>
+              <span tw="text-indigo-600">Blog post built with Nextjs, PlanetScale and hosted on Vercel. </span>
+            </h2>
+            <div tw="mt-8 flex md:mt-0">
+              <div tw="flex rounded-md shadow">
+                <a
+                  href="#"
+                  tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white"
+                >
+                 {title}
+                </a>
+              </div>
+              <div tw="ml-3 flex rounded-md shadow">
+                <a
+                  href="#"
+                  tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600"
+                >
+                  Read more 
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
       ),
 
       {

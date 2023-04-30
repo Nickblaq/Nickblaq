@@ -1,16 +1,36 @@
 
+import Link from 'next/link';
+import { allBlogs } from 'contentlayer/generated';
+import ViewCounter from '@/app/blog/view-counter';
 
-export default function index () {
+export const metadata = {
+  title: 'Blog',
+  description: 'Read my thoughts on web technology.',
+};
 
-    return (
-        <>
-         <div className='container mx-auto'>
-    <main className="mx-auto w-full">
-        <section id='about-me' className='mt-28 pb-16 leading-loose h-screen w-full mx-auto flex  justify-center'>
-       <h1 className="leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold md:font-extrabold tracking-normal transition-colors first:mt-0">Coming Soon!</h1>
+export default async function BlogPage() {
+  return (
+    <section>
+      <h1 className="font-bold text-3xl font-serif mb-5">Blog</h1>
+      {allBlogs
+        .sort((a, b) => {
+          if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+            return -1;
+          }
+          return 1;
+        })
+        .map((post) => (
+          <Link
+            key={post.slug}
+            className="flex flex-col space-y-1 mb-4"
+            href={`/blog/${post.slug}`}
+          >
+            <div className="w-full flex flex-col">
+              <p>{post.title}</p>
+              <ViewCounter slug={post.slug} trackView={false} />
+            </div>
+          </Link>
+        ))}
     </section>
-    </main>
-    </div>
-        </>
-    )
+  );
 }
