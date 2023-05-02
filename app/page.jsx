@@ -1,6 +1,8 @@
 
 import { Linkedin, Github, Twitter, Instagram, Mail } from 'lucide-react';
-
+import { getBlogViews, postTest } from '@/utils/metrics';
+import { da } from 'date-fns/locale';
+import { data } from 'autoprefixer';
 
 const externalLinks = [
   {
@@ -41,7 +43,14 @@ const externalLinks = [
 ]
 
 
-export default function Home() {
+export default async function Home() {
+
+  try {
+    const data = await postTest()
+    console.log(data)
+  } catch (error) {
+    console.log(data)
+  }
 
   return (
     <>

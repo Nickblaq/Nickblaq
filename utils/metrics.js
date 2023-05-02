@@ -15,3 +15,24 @@ export const getBlogViews = cache(async () => {
         return res.status(500).json({ message: error.message })
     }
 })
+
+
+export const postTest = async () => {
+    try {
+        const data = await queryBuilder
+        .insertInto('person')
+  .values([
+    {
+      name: 'Bob'
+    },
+    {
+        name: 'Jimi'
+    }
+  ])
+  .execute()
+  return data
+    } catch (error) {
+        console.log(error)
+        return error
+    }
+}
