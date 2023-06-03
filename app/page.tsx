@@ -39,7 +39,7 @@ const externalLinks = [
     show: false
   },
 ]
-
+import ik from '../public/ik.jpg'
 
 export default function Home() {
 
@@ -52,7 +52,7 @@ export default function Home() {
    
       <div className='w-full flex flex-col items-end md:items-start md:w-5/12 md:pb-1 2xl:pb-2'>
       <div className='relative'>
-      <BlurImage className=' bg-cover' width='997' height='1024' src='/ik.jpg' alt='Nickbaq face image' />
+      <BlurImage className=' bg-cover' width='997' height='1024' src={ik} alt='Nickbaq face image' />
       </div>
       <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
       {
