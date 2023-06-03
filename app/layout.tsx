@@ -4,6 +4,8 @@ import Sidebar from '@/components/side-bar'
 import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
+import Navbar from '@/components/navbar';
+import Nav from '@/components/nav';
 
 const ModaFont = Moda({
   variable: "--font-moda",
@@ -56,20 +58,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"
-    className={clsx(
-      'text-gray-900/75 bg-yellow-700/5 dark:text-white dark:bg-[#111010]',
-      ModaFont.variable
-    )}
-    >
-      <body className='antialiased max-w-6xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto h-screen'>
-          
-      <Sidebar />
-        <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0 ">
+    <html lang="en" suppressHydrationWarning>
+      <body className={clsx(
+        'text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased' ,
+        ModaFont.variable
+      )}>    
+      <Nav />
+        <main className='max-w-4xl mb-40 flex flex-col px-4 w-full pt-[100px] md:mt-14 lg:mt-28 mx-auto min-h-screen scroll-m-20 overflow-x-hidden'>
           {children}
-          <Footer />
-          <Analytics />
+          {/* <Analytics /> */}
         </main>
+        <Footer />
         </body>
     </html>
   )

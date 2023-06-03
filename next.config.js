@@ -1,11 +1,12 @@
 const { get } = require('@vercel/edge-config');
-const { withContentlayer } = require('next-contentlayer');
+
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     appDir: true,
   },
+
   redirects() {
     try {
       return get('redirects');
@@ -23,6 +24,12 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: [
+      'avatars.githubusercontent.com',
+      'raw.githubusercontent.com',
+      'pbs.twimg.com',
+      'cloudflare-ipfs.com',
+    ]
   },
 };
 
@@ -75,4 +82,4 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withContentlayer(nextConfig);
+module.exports = nextConfig;

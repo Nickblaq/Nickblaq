@@ -41,14 +41,26 @@ const externalLinks = [
 ]
 
 
-export default function Home() {
+
+export default async function Home() {
+  
+  // const seed = {
+  //   title: 'Nick Okoro',
+  //   description: 'I create beautiful & accessable things for the web.',
+  //   image: '/ik.jpg',
+  //  }  
+
+
+
+
+  
 
   return (
     <>
-    <div className='container mx-auto'>
+    <div className=''>
     <main className="mx-auto w-full">
   
-    <section id='home' className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
+    <section id='home' className='indent-1 flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
       <div className='w-full md:w-6/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
         <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold md:font-extrabold tracking-normal transition-colors first:mt-0'>
           Nicholas Okoro
@@ -65,7 +77,7 @@ Overall, I am a highly skilled &amp; dedicated Frontend Software Engineer, commi
       </div>
     
       <div className='w-full flex flex-col items-end md:items-start md:w-5/12 md:pb-1 2xl:pb-2'>
-      <div className='relative'>
+      <div className=''>
    <img src='/ik.jpg' alt='picture of me wearing glasees' />
       </div>
       <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
