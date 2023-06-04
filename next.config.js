@@ -5,6 +5,7 @@ const { get } = require('@vercel/edge-config');
 const nextConfig = {
   experimental: {
     appDir: true,
+    serverActions: true,
   },
 
   redirects() {

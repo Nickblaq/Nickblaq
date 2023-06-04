@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Icons } from "./icons"
-import { LayoutGroup, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const items = [
     {
@@ -17,43 +17,22 @@ const items = [
     // {
     //     'id': 2,
     //     'type': false,
-    //     'name': 'About',
-    //     url: '/about',
-    //     icon: 'user'
-    // },
-    {
-        'id': 2,
-        'type': false,
-        'name': 'GuestBook',
-        url: '/guessbook',
-        icon: 'book'
-    },
-    {
-        'id': 3,
-        'type': false,
-        'name': 'Craft',
-        url: '/craft',
-        icon: 'pencil'
-    },
-    {
-        'id': 4,
-        'type': false,
-        'name': 'Work',
-        url: '/work',
-        icon: 'workflow'
-    },
-    // {
-    //     'id': 5,
-    //     'type': true,
-    //     'name': 'twitter',
-    //     url: 'twitter.com/nickblaq',
-    //     icon: 'twitter'
+    //     'name': 'Blog',
+    //     url: '/blog',
+    //     icon: 'book'
     // },
     // {
-    //     'id': 7,
-    //     'type': 'social',
+    //     'id': 3,
+    //     'type': false,
+    //     'name': 'Craft',
+    //     url: '/craft',
+    //     icon: 'pencil'
+    // },
+    // {
+    //     'id': 4,
+    //     'type': false,
     //     'name': 'Work',
-    //     url: '/',
+    //     url: '/work',
     //     icon: 'workflow'
     // },
 ]

@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import { Bodoni_Moda as Moda } from 'next/font/google'
-import Sidebar from '@/components/side-bar'
 import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
@@ -63,7 +62,7 @@ export default function RootLayout({ children }) {
         ModaFont.variable
       )}>    
       <Nav />
-        <main className='max-w-4xl mb-40 flex flex-col px-4 w-full pt-[100px] md:mt-14 lg:mt-28 mx-auto min-h-screen scroll-m-20 overflow-x-hidden'>
+        <main className='max-w-4xl flex flex-col px-4 w-full pt-8 md:mt-14 lg:mt-28 mx-auto scroll-m-20'>
           {children}
           {/* <Analytics /> */}
         </main>
