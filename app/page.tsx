@@ -57,7 +57,7 @@ export default function Home() {
        width={716} 
        height={1024}
       src={nick} 
-      alt='Nickbaq face image' />
+      alt='pic of nickblaq waring cool sunglasses' />
       {/* </div> */}
       <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
       {
