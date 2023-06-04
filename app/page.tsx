@@ -39,8 +39,7 @@ const externalLinks = [
     show: false
   },
 ]
-import nicholas from '../public/nicholas.jpg'
-import ik from '../public/ik.jpg'
+import nick from '../public/nick.jpg'
 
 export default function Home() {
 
@@ -55,9 +54,9 @@ export default function Home() {
       {/* <div className=''> */}
       <BlurImage 
       className='bg-cover' 
-       width={997} 
+       width={716} 
        height={1024}
-      src={ik} 
+      src={nick} 
       alt='Nickbaq face image' />
       {/* </div> */}
       <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
