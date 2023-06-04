@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-    <div className='mx-auto overflow-y-hidden'>
+
     <main className="">
   
     <section className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
@@ -97,7 +97,7 @@ With a focus on researching, designing, &amp; implementing innovative web techno
       </div>
     </section>
     </main>
-    </div>
+
     </>
   )
 }

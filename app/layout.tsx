@@ -4,7 +4,6 @@ import Sidebar from '@/components/side-bar'
 import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
-import Navbar from '@/components/navbar';
 import Nav from '@/components/nav';
 
 const ModaFont = Moda({
