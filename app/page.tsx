@@ -39,6 +39,7 @@ const externalLinks = [
     show: false
   },
 ]
+import nicholas from '../public/nicholas.jpg'
 import ik from '../public/ik.jpg'
 
 export default function Home() {
@@ -48,12 +49,17 @@ export default function Home() {
     <div className='mx-auto overflow-y-hidden'>
     <main className="">
   
-    <section id='home' className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
+    <section className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
    
-      <div className='w-full flex flex-col items-end md:items-start md:w-5/12 md:pb-1 2xl:pb-2'>
-      <div className='relative'>
-      <BlurImage className=' bg-cover' width='997' height='1024' src={ik} alt='Nickbaq face image' />
-      </div>
+      <div className='relative w-full flex flex-col items-end md:items-start md:w-5/12 md:pb-1 2xl:pb-2'>
+      {/* <div className=''> */}
+      <BlurImage 
+      className='bg-cover' 
+       width={997} 
+       height={1024}
+      src={ik} 
+      alt='Nickbaq face image' />
+      {/* </div> */}
       <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
       {
         externalLinks.map((data) => {
@@ -63,7 +69,7 @@ export default function Home() {
             {
               data.show === true && 
            
-            <li key={data.id} className='w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 cursor-pointer'>
+            <li key={data.id} className='w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 cursor-pointer mx-auto'>
               <a href={data.link} target="_blank">
                 {data.icon}
               </a>
