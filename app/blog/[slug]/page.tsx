@@ -12,50 +12,6 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}): Promise<Metadata | undefined> {
-  const post = allBlogs.find((post) => post.slug === params.slug);
-  if (!post) {
-    return;
-  }
-
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-    slug,
-  } = post;
-  const ogImage = image
-    ? `http://localhost:3000${image}`
-    : `http://localhost:3000/api/og?title=${title}`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      publishedTime,
-      url: `http://localhost:3000/blog/${slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
-}
-
-
 
 export default async function Blog({ params }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
