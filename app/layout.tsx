@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
         ModaFont.variable
       )}>    
       <Nav />
-        <main className='max-w-4xl flex flex-col px-4 w-full pt-8 md:mt-14 lg:mt-28 mx-auto scroll-m-20'>
+        <main className='max-w-6xl flex flex-col items-center px-4 w-full pt-8 md:mt-14 lg:mt-28 mx-auto'>
           {children}
           {/* <Analytics /> */}
         </main>

@@ -8,6 +8,7 @@ import { Button, buttonVariants } from "./ui/button";
 import "@/styles/editor.css"
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getTableOfContents } from "@/lib/toc";
 import { Icons } from "./icons";
 import { PostTable } from "@/db/vercelPg";
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -42,6 +43,28 @@ interface EditorProps {
 
 type FormData = z.infer<typeof postPatchSchema>
 
+const DEFAULT_INITIAL_DATA = () => {
+  return {
+    "time": new Date().getTime(),
+    "blocks": [
+      {
+        "type": "header",
+        "data": {
+          "text": "Welcome to My Editor",
+          "level": 1
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "url": "https://cdn.pixabay.com/photo/2020/03/07/05/18/coffee-4908764_960_720.jpg",
+          "caption": "Time for a break"
+        }
+      },
+    ]
+  }
+}
+
 export default function Editor ( {post}: EditorProps) {
 
   const { register, handleSubmit } = useForm<FormData>({
@@ -51,7 +74,9 @@ export default function Editor ( {post}: EditorProps) {
 
   const ref = useRef<EditorJS>();
   const router = useRouter()
-
+  const tbContent = getTableOfContents
+  const [editorData, setEditorData] = useState<OutputData>(DEFAULT_INITIAL_DATA);
+  const [output, setOutput] = useState(JSON.stringify(DEFAULT_INITIAL_DATA, null, 4));
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const [isSaving, setIsSaving] = useState<boolean>(false)
 
@@ -94,7 +119,7 @@ export default function Editor ( {post}: EditorProps) {
                 //   }
                 // },
                 holder: "editor",
-                data: body.content,
+                data: editorData,
                 // tools,
                 tools: {
                   code: Code,
@@ -153,7 +178,12 @@ export default function Editor ( {post}: EditorProps) {
         setIsSaving(true)
     
         const blockData = await ref.current?.save()
-          console.log('this is block data', blockData)
+      console.log("save content... ", JSON.stringify(blockData, null, 4));
+      setOutput(JSON.stringify(blockData, null, 4));
+     
+        const strinBlocks = await JSON.stringify(blockData?.blocks, null, 4)
+        const mdxContent = await tbContent(strinBlocks)
+          console.log('this is mdx data',  mdxContent)
         // const response = await fetch(`/api/posts/${post.id}`, {
         //   method: "POST",
         //   headers: {

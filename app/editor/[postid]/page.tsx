@@ -21,18 +21,41 @@ export default async function EditorPage({ params}: EditorPageProps) {
     // .selectAll()
     // .where('posts.id', '=', id)
     // .executeTakeFirstOrThrow()
-    const mockData: OutputData = {
-        "time": Date.now(),
-        "blocks": [
-          {
-            "id": "zbGZFPM-iI",
-            "type": "paragraph",
-            "data": {
-               "text": "Hey. Meet the new Editor. On this page you can see it in action — try to edit this text. Source code of the page contains the example of connection and configuration."
-            }
-         },
-        ],
-        "version": "2.8.1"
+    // const mockData = {
+    //     "time": Date.now(),
+    //     "blocks": [
+    //       {
+    //         "id": "zbGZFPM-iI",
+    //         "type": "paragraph",
+    //         "data": {
+    //            "text": "Hey. Meet the new Editor. On this page you can see it in action — try to edit this text. Source code of the page contains the example of connection and configuration."
+    //         }
+    //      },
+    //     ],
+    //     "version": "2.8.1"
+    //   }
+
+      const mockData = {
+     
+          "time": new Date().getTime(),
+          "blocks": [
+            {
+              "type": "header",
+              "data": {
+                "text": "Welcome to My Editor",
+                "level": 1
+              }
+            },
+            {
+              "type": "image",
+              "data": {
+                "url": "https://cdn.pixabay.com/photo/2020/03/07/05/18/coffee-4908764_960_720.jpg",
+                "caption": "Time for a break"
+              }
+            },
+          ],
+          "version": "2.8.1"
+  
       }
 
 
