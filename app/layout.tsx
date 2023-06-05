@@ -62,10 +62,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className='text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased '>
         <Nav />
-        <main className='flex justify-center container mx-auto'>
+        <main className='container mx-auto px-6'>
           {children}
           </main>
-          <Footer />
+ 
           {/* <Analytics /> */}
         </body>
     </html>
