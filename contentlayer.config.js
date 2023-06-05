@@ -43,19 +43,25 @@ export const Blog = defineDocumentType(() => ({
   fields: {
     title: {
       type: 'string',
+      description: 'The title of the post',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      description: 'The description of the post',
       required: true,
     },
     publishedAt: {
-      type: 'string',
+      type: 'date',
+      description: 'The date of post',
       required: true,
     },
-    summary: {
+    author: {
       type: 'string',
+      description: 'This author of the post',
       required: true,
     },
-    image: {
-      type: 'string',
-    },
+   
   },
   computedFields,
 }));

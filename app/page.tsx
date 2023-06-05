@@ -1,88 +1,27 @@
 
-import { Linkedin, Github, Twitter, Instagram, Mail } from 'lucide-react';
-import BlurImage from '@/components/blurimage';
 
-const externalLinks = [
-  {
-    id: 1,
-    name: 'Github',
-    link: 'https://github.com/nickblaq',
-    icon: <Github />,
-    show: true
-  },
-  {
-    id: 2,
-    name: 'Twitter',
-    link: 'https://twitter.com/nickblaq',
-    icon: <Twitter />,
-    show: true
-  },
-  {
-    id: 3,
-    name: 'Instagram',
-    link: 'https://instagram.com/nickblaq',
-    icon: <Instagram />,
-    show: true
-  },
-  {
-    id: 4,
-    name: 'Mail',
-    link: 'mailto:nickblaq@nickblaq.xyz',
-    icon: <Mail />,
-    show: false
-  },
-  {
-    id: 5,
-    name: 'LinkedIn',
-    link: '/',
-    icon: <Linkedin />,
-    show: false
-  },
-]
+import BlurImage from '@/components/blurimage';
 import nick from '../public/nick.jpg'
+
 
 export default function Home() {
 
   return (
     <>
 
-    <main className="">
-  
-    <section className='flex flex-col md:flex-row justify-between items-end border-b-black pb-4 md:pb-12 lg:pb-16 2xl:pb-24'>
-   
-      <div className='relative w-full flex flex-col items-end md:items-start md:w-5/12 md:pb-1 2xl:pb-2'>
-      {/* <div className=''> */}
+    <main className="px-6 max-w-6xl h-[80vh] mx-auto">
+    <div className='flex flex-col h-full md:flex-row md:justify-between items-center'>
+      <div className='relative w-full md:w-5/12 md:h-auto'>
       <BlurImage 
       className='bg-cover' 
        width={716} 
        height={1024}
       src={nick} 
       alt='pic of nickblaq waring cool sunglasses' />
-      {/* </div> */}
-      <ul className='mt-8 2xl:mt-12 flex gap-5 md:gap-7 2xl:gap-4'>
-      {
-        externalLinks.map((data) => {
-          
-          return (
-            <>
-            {
-              data.show === true && 
-           
-            <li key={data.id} className='w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 cursor-pointer mx-auto'>
-              <a href={data.link} target="_blank">
-                {data.icon}
-              </a>
-            </li>
-          }
-            </>
-          )
-        })
-      }
-      </ul>
       </div>
-
-
-      <div className='w-full md:w-6/12 border-t border-t-black pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
+      
+   
+      <div className='w-full md:w-6/12  pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
         <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold md:font-extrabold tracking-normal transition-colors first:mt-0'>
           Nicholas Okoro
           <br className='py-8'></br>
@@ -95,9 +34,8 @@ export default function Home() {
 With a focus on researching, designing, &amp; implementing innovative web technologies.
         </h2>
       </div>
-    </section>
+      </div>
     </main>
-
     </>
   )
 }

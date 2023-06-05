@@ -2,28 +2,28 @@ import '@/styles/globals.css'
 import { Bodoni_Moda as Moda } from 'next/font/google'
 import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
-import clsx from 'clsx';
 import Nav from '@/components/nav';
+import { Metadata } from 'next';
 
-const ModaFont = Moda({
-  variable: "--font-moda",
-  subsets: ['latin'],
-  display: 'swap'
-})
+// const ModaFont = Moda({
+//   variable: "--font-moda",
+//   subsets: ['latin'],
+//   display: 'swap'
+// })
 
-export const metadata = {
-  title: 'Nicholas Okoro',
-  description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
+export const metadata: Metadata = {
+  title: 'Nickblaq',
+  description: 'Frontend Software Engineer. | Crafting polished UI & accessable things on the web',
   openGraph: {
-    title: 'Nicholas Okoro portfolio',
+    title: 'nickblaq',
     description: 'Frontend Software Engineer. | I create beautiful & accessable things on the web',
     url: 'https://nickblaq.xyz',
-    siteName: 'Nicholas Okoro portfolio',
+    siteName: 'niclblaq',
     images: [
       {
-        url: 'https://nickblaq.xyz/og.png',
-        width: 1920,
-        height: 1080,
+        url: '/nick.jpg',
+        width: 716,
+        height: 1024,
       },
     ],
     locale: 'en-US',
@@ -41,11 +41,14 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Nickblaq',
+    title: 'nickblaq',
+    description: 'Frontend Software Engineer. | Crafting polished UI & accessable things on the web',
     card: 'summary_large_image',
+    siteId: 'nickblaq',
+    creator: '@nickblaq'
   },
   icons: {
-    shortcut: '/favicon.svg',
+    shortcut: '/nick.jpg',
   },
   verification: {
     google: '',
@@ -57,16 +60,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={clsx(
-        'text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased' ,
-        ModaFont.variable
-      )}>    
-      <Nav />
-        <main className='max-w-6xl flex flex-col items-center px-4 w-full pt-8 md:mt-14 lg:mt-28 mx-auto'>
+      <body className='text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased '>
+        <Nav />
+        <main className='flex justify-center container mx-auto'>
           {children}
+          </main>
+          <Footer />
           {/* <Analytics /> */}
-        </main>
-        <Footer />
         </body>
     </html>
   )

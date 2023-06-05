@@ -1,1 +1,0 @@
-import { db, sql } from "@/db/vercelPg";
