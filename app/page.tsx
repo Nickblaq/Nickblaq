@@ -27,11 +27,11 @@ export default function Home() {
           <br className='py-8'></br>
 
            <p className='md:tracking-wider font-normal md:font-semibold pt-5 md:pt-10 text-gray-900/50 dark:text-indigo-500/50'>
-            I create beautiful &amp; accessable things for the web.</p>
+            Steady crafting accessable UI systems on the web .</p>
         </h1>
         <h2 className='leading-loose tracking-wider mt-5 xl:mt-8 2xl:mt-10 text-base md:text-xl'>
         As a dedicated <strong>Frontend Software Engineer</strong> my expertise lies in designing &amp; building visually appealing &amp; user-friendly web applications that are both functional &amp; accessible. I am passionate about creating solutions that make a difference in people's lives.
-With a focus on researching, designing, &amp; implementing innovative web technologies.
+With a focus on research, design, &amp; implementing innovative web technologies.
         </h2>
       </div>
       </div>
