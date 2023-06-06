@@ -2,6 +2,7 @@
 
 import BlurImage from '@/components/blurimage';
 import nick from '../public/nick.jpg'
+import Footer from '@/components/footer';
 
 
 export default function Home() {
@@ -9,33 +10,37 @@ export default function Home() {
   return (
     <>
 
-    <main className="px-6 max-w-6xl h-[80vh] mx-auto">
-    <div className='flex flex-col h-full md:flex-row md:justify-between items-center'>
-      <div className='relative w-full md:w-5/12 md:h-auto'>
+    <main className="px-6 max-w-6xl  mx-auto leading-loose tracking-wider text-base md:text-xl overflow-y-auto">
+    <div className='flex flex-col md:flex-row md:justify-between items-center'>
+      <div className='max-w-xl mx-auto md:w-5/12  md:h-auto block'>
+      <div className='rounded-xl bg-origin-border overflow-hidden'>
       <BlurImage 
       className='bg-cover' 
        width={716} 
        height={1024}
       src={nick} 
-      alt='pic of nickblaq waring cool sunglasses' />
+      alt='Nickblaq' />
+      </div>
       </div>
       
    
-      <div className='w-full md:w-6/12  pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10'>
-        <h1 className='leading-10 mt-10 scroll-m-20 pb-2 text-3xl md:text-5xl font-semibold md:font-extrabold tracking-normal transition-colors first:mt-0'>
-          Nicholas Okoro
-          <br className='py-8'></br>
-
-           <p className='md:tracking-wider font-normal md:font-semibold pt-5 md:pt-10 text-gray-900/50 dark:text-indigo-500/50'>
-            I create beautiful &amp; accessable things for the web.</p>
+      <div className='w-full md:w-6/12 pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10 text-xl md:font-medium font-normal leading-loose underline-offset-2'>
+        <h1 className='leading-10 mt-10 pb-2 text-3xl md:text-5xl font-bold md:font-extrabold tracking-normal'>
+        Hi there, 
         </h1>
-        <h2 className='leading-loose tracking-wider mt-5 xl:mt-8 2xl:mt-10 text-base md:text-xl'>
-        As a dedicated <strong>Frontend Software Engineer</strong> my expertise lies in designing &amp; building visually appealing &amp; user-friendly web applications that are both functional &amp; accessible. I am passionate about creating solutions that make a difference in people's lives.
-With a focus on researching, designing, &amp; implementing innovative web technologies.
+        <h2 className=' py-6'>
+        I&apos;m <strong>Nicholas Okoro</strong> and I love crafting impeccable accessable <strong>User Interface</strong> and coding things on the web.
+           </h2>
+        <h2 className='xl:mt-8 2xl:mt-10 '>
+       As well as <strong><a className='underline' href="https://nickblaq.xyz/blog" target='_blank' rel='noreferrer'>wrtitng</a></strong>{" "} and{" "}
+       <strong><a className='underline' href="https://github.com/nickblaq"  target='_blank' rel='noreferrer'>coding</a></strong>{" "}
+       you can find me on <strong><a className='underline' href="https://twitter.com/nickblaq" target='_blank' rel='noreferrer'>Twitter</a></strong>.
         </h2>
+        <p>Interested in other things? Reach out by email me at <strong><a className='underline' href="mailto:nickblaq@nickblaq.xyz" target='_blank' rel='noreferrer'>nickblaq@nickblaq.xyz</a></strong>.</p>
       </div>
       </div>
     </main>
+    <Footer />
     </>
   )
 }

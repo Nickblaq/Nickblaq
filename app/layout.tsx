@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import './global.css';
 import { Bodoni_Moda as Moda } from 'next/font/google'
 import Footer from '@/components/footer';
 import { Analytics } from '@vercel/analytics/react';
@@ -62,10 +62,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className='text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased '>
         <Nav />
-        <main className='container mx-auto px-6'>
+        <main className='container mx-auto px-2'>
           {children}
           </main>
- 
+       
           {/* <Analytics /> */}
         </body>
     </html>

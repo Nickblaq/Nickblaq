@@ -37,7 +37,9 @@ export default function Nav() {
     
     return (
         <>
-                <div className="h-20 md:px-24 px-4 mb-8 flex justify-between items-center border-b border-gray-500">
+                <div 
+                className=" md:text-5xl text-2xl md:font-bold font-semibold h-20 md:px-24 px-4 mb-8 flex justify-between items-center border-b border-gray-500"
+                >
                 <Link aria-label="Nicholas Okoro" href="/">
     <h1>Nickblaq</h1>
     </Link>

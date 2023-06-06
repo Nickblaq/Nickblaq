@@ -7,15 +7,12 @@
   color: #fefefe;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-   box-sizing: border-box;
-}
-
 html {
   min-width: 360px;
 }
+/* .prose h1 {
+  @apply text-gray-200;
+} */
 
 .prose .anchor {
   @apply absolute invisible no-underline;
