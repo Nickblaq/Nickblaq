@@ -3,6 +3,7 @@
 import BlurImage from '@/components/blurimage';
 import nick from '../public/nick.jpg'
 import Footer from '@/components/footer';
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <>
 
-    <main className="px-6 max-w-6xl  mx-auto leading-loose tracking-wider text-base md:text-xl overflow-y-auto">
+    <main className="px-6 max-w-6xl w-full  mx-auto leading-loose tracking-wider text-base md:text-xl overflow-y-auto lg:flex items-center lg:h-[80vh] justify-center">
     <div className='flex flex-col md:flex-row md:justify-between items-center'>
       <div className='max-w-xl mx-auto md:w-5/12  md:h-auto block'>
       <div className='rounded-xl bg-origin-border overflow-hidden'>
@@ -32,7 +33,7 @@ export default function Home() {
         I&apos;m <strong>Nicholas Okoro</strong> and I love crafting impeccable accessable <strong>User Interface</strong> and coding things on the web.
            </h2>
         <h2 className='xl:mt-8 2xl:mt-10 '>
-       As well as <strong><a className='underline' href="https://nickblaq.xyz/blog" target='_blank' rel='noreferrer'>wrtitng</a></strong>{" "} and{" "}
+       As well as <strong><Link className='underline' href="https://nickblaq.xyz/blog">wrtitng</Link></strong>{" "} and{" "}
        <strong><a className='underline' href="https://github.com/nickblaq"  target='_blank' rel='noreferrer'>coding</a></strong>{" "}
        you can find me on <strong><a className='underline' href="https://twitter.com/nickblaq" target='_blank' rel='noreferrer'>Twitter</a></strong>.
         </h2>

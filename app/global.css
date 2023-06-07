@@ -28,6 +28,9 @@ html {
   @apply visible;
 }
 
+.prose {
+  @apply w-full max-w-6xl
+}
 .prose a {
   @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }
