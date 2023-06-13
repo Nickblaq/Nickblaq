@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 
-const CustomLink = (props) => {
+export const CustomLink = (props) => {
   const href = props.href;
 
   if (href.startsWith('/')) {
@@ -23,11 +23,11 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function RoundedImage(props) {
+export function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-function Callout(props) {
+export function Callout(props) {
   return (
     <div className="flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -36,12 +36,13 @@ function Callout(props) {
   );
 }
 
-function ProsCard({ title, pros }) {
+export function ProsCard(props) {
+  
   return (
     <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
-      <span>{`You might use ${title} if...`}</span>
+      <span>{`You might use ${props.title} if...`}</span>
       <div className="mt-4">
-        {pros.map((pro) => (
+        {props.pros.map((pro) => (
           <div key={pro} className="flex font-medium items-baseline mb-2">
             <div className="h-4 w-4 mr-2">
               <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
@@ -65,12 +66,12 @@ function ProsCard({ title, pros }) {
   );
 }
 
-function ConsCard({ title, cons }) {
+export function ConsCard({ props }) {
   return (
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
-      <span>{`You might not use ${title} if...`}</span>
+      <span>{`You might not use ${props.title} if...`}</span>
       <div className="mt-4">
-        {cons.map((con) => (
+        {props.cons.map((con) => (
           <div key={con} className="flex font-medium items-baseline mb-2">
             <div className="h-4 w-4 mr-2">
               <svg
@@ -89,6 +90,8 @@ function ConsCard({ title, cons }) {
     </div>
   );
 }
+
+
 
 const components = {
   Image: RoundedImage,

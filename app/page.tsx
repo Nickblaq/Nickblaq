@@ -5,8 +5,61 @@ import nick from '../public/nick.jpg'
 import Footer from '@/components/footer';
 import Link from 'next/link';
 
+import { OutputData } from "@editorjs/editorjs";
 
-export default function Home() {
+type parser = {
+    parse(OutputData: OutputData): Array<string>
+}
+
+const jsondata = {
+  "time": 1589987527499,
+  "blocks": [
+    {
+      "type": "embded",
+      "data": {
+        "service": "youtube",
+        "source": "https://www.youtube.com/watch?v=JbqGYgI3XY0",
+        "embed": "https://www.youtube.com/embed/JbqGYgI3XY0",
+        "width": 580,
+        "height": 320,
+        "caption": ""
+      }
+    },
+    {
+      "type": "image",
+      "data": {
+        "file": {
+          "url": "http://localhost/uploads/images/1.jpg"
+        },
+        "caption": "",
+        "withBorder": false,
+        "stretched": false,
+        "withBackground": false
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "test",
+        "level": 2
+      }
+    }
+  ],
+  "version": "2.17.0"
+};
+
+
+
+
+
+
+  
+
+export default async function Home() {
+
+  // const myParser = parser();
+  // const parsedBlocks =  myParser.parse(jsondata);
+  // console.log(parsedBlocks)
 
   return (
     <>
