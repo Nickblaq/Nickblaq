@@ -73,26 +73,7 @@
   }
 }
 
-.head-1 {
-  @apply text-4xl font-extrabold  lg:text-5xl;
-}
-.head-2 {
-  @apply text-3xl font-semibold lg:text-5xl first:mt-0; 
-}
-.head-3 {
-  @apply text-2xl font-semibold;
-}
-.para {
-  @apply leading-7 [&:not(:first-child)]:mt-6;
-}
 
-h1, h2, h3, p {
-  @apply scroll-m-2 pb-2 tracking-tight ;
-}
-
-.block {
-  @apply mt-6 border-l-2 pl-6 italic;
-}
 
 ::selection {
   background-color: #47a3f3;
