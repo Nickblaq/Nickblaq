@@ -340,14 +340,14 @@ export default function Editor ( {post }: EditorProps) {
         <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div 
-        className="flex flex-col mx-auto px-4 gap-10 w-full h-[calc(100vh-120px)] overflow-y-auto overflow-x-hidden">
+        className="flex flex-col mx-auto px-2 md:px-4 gap-10 w-full h-[calc(100vh-120px)] overflow-y-auto overflow-x-hidden">
         <div className="flex w-full items-center justify-between gap-6 border-b border-muted-foreground pb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 md:px-2">
           <Link href='/'
           className={cn(buttonVariants())}
           >
             <>
-            <Icons.chevronLeft className="mr-2 h-4 w-4" />
+            <Icons.chevronLeft className="h-4 w-4" />
             Back
             </>
           </Link>
@@ -358,7 +358,7 @@ export default function Editor ( {post }: EditorProps) {
           <div className="flex items-center gap-6">
           <button type="submit" className={cn(buttonVariants({variant: 'secondary'}))}>
             {isSaving && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              <Icons.spinner className=" h-4 w-4 animate-spin" />
             )}
             <span>Save</span>
           </button>
@@ -367,10 +367,10 @@ export default function Editor ( {post }: EditorProps) {
           // `hover: ${isEditMode ? 'bg-primary' : 'bg-secondary'}`
           )}>
             {isEditMode ? (
-               <Icons.eye className="mr-2 h-4 w-4" />
+               <Icons.eye className=" h-4 w-4" />
             ) :
             (
-              <Icons.pencil className="mr-2 h-4 w-4" />
+              <Icons.pencil className=" h-4 w-4" />
             )
             }
             <span>{isEditMode ? 'Preview' : 'Edit'}</span>
