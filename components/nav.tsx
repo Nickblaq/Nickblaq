@@ -56,7 +56,7 @@ export default function Nav() {
     
     return (
         <>
-        <div className="w-full mx-auto h-20 md:px-24 px-4 mb-8  border-b border-gray-500 flex justify-around md:justify-between items-center md:text-5xl text-2xl md:font-bold font-semibold">
+        <div className="w-full mx-auto h-20 md:px-24 px-4 mb-8  border-b border-gray-500 flex gap-3 justify-around md:justify-between items-center md:text-5xl text-2xl md:font-bold font-semibold">
 
        <Link aria-label="Nicholas Okoro" href="/">
       <h1>Nickblaq</h1>
