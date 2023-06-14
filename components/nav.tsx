@@ -57,10 +57,11 @@ export default function Nav() {
     return (
         <>
         <div className="w-full mx-auto h-20 md:px-24 px-4 mb-8  border-b border-gray-500 flex gap-3 justify-around md:justify-between items-center md:text-5xl text-2xl md:font-bold font-semibold">
-
+      <div className="mr-2 md:mr-0">
        <Link aria-label="Nicholas Okoro" href="/">
       <h1>Nickblaq</h1>
       </Link>
+      </div>
       
       <div className="flex gap-6 md:gap-24 items-center -ml-8 md:ml-0">
        <ul className='flex items-center gap-3 md:gap-8 font-normal text-xl md:text-2xl'>
