@@ -54,7 +54,7 @@ const DEFAULT_INITIAL_DATA =
 
 const post= {
   id: '1',
-  title: 'Szn Title',
+  title: 'Post Title',
   content: mockData,
   published: false
 } 

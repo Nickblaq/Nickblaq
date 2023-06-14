@@ -21,8 +21,14 @@
   color: inherit;
 }
 
+
+
 .codex-editor {
   display: flex;
+  height: 100%;
+  /* background: theme('colors.popover.DEFAULT'); */
+  color: inherit;
+	/* border-color: theme('colors.border'); */
 }
 
 
@@ -49,6 +55,7 @@
   min-height: 20px;
   margin-bottom: 10px;
 }
+
 
 
 .dark .ce-popover__item-icon,

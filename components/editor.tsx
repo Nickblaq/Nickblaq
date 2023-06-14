@@ -17,8 +17,119 @@ import { postPatchSchema } from "@/lib/validate";
 
 import { Skeleton } from "./ui/skeleton";
 import { parseToMd } from "@/lib/parser";
+import EditorTextParser from "./text-parser";
+import { uploadImage } from "@/lib/utils";
 
-
+const exampleData = {
+  time: 1635603431943,
+  blocks: [
+    {
+      id: "sheNwCUP5A",
+      type: "header",
+      data: {
+        text: "An easy to use code editor for writing and sharing",
+        level: 2
+      }
+    },
+    {
+      id: "12iM3lqzcm",
+      type: "paragraph",
+      data: {
+        text:
+          "Hey. Meet the new Editor. On this page you can see it in action — try to edit this text."
+      }
+    },
+    {
+      id: "fvZGuFXHmK",
+      type: "header",
+      data: {
+        text: "Key features",
+        level: 3
+      }
+    },
+    {
+      id: "xnPuiC9Z8M",
+      type: "list",
+      data: {
+        style: "unordered",
+        items: [
+          "It is a block-styled editor",
+          "It returns clean data output in JSON",
+          "Designed to be extendable and pluggable with a simple API"
+        ]
+      }
+    },
+    {
+      id: "-MhwnSs3Dw",
+      type: "header",
+      data: {
+        text: "What does it mean «block-styled editor»",
+        level: 3
+      }
+    },
+    {
+      id: "Ptb9oEioJn",
+      type: "paragraph",
+      data: {
+        text:
+          'Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. Editor.js <mark class="cdx-marker">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor\'s Core.'
+      }
+    },
+    {
+      id: "-J7nt-Ksnw",
+      type: "paragraph",
+      data: {
+        text:
+          'There are dozens of <a href="https://github.com/editor-js">ready-to-use Blocks</a> and the <a href="https://editorjs.io/creating-a-block-tool">simple API</a> for creation any Block you need. For example, you can implement Blocks for Tweets, Instagram posts, surveys and polls, CTA-buttons and even games.'
+      }
+    },
+    {
+      id: "SzwhuyoFq6",
+      type: "header",
+      data: {
+        text: "What does it mean clean data output",
+        level: 3
+      }
+    },
+    {
+      id: "x_p-xddPzV",
+      type: "paragraph",
+      data: {
+        text:
+          "Classic WYSIWYG-editors produce raw HTML-markup with both content data and content appearance. On the contrary, Editor.js outputs JSON object with data of each Block. You can see an example below"
+      }
+    },
+    {
+      id: "6W5e6lkub-",
+      type: "paragraph",
+      data: {
+        text:
+          'Given data can be used as you want: render with HTML for <code class="inline-code">Web clients</code>, render natively for <code class="inline-code">mobile apps</code>, create markup for <code class="inline-code">Facebook Instant Articles</code> or <code class="inline-code">Google AMP</code>, generate an <code class="inline-code">audio version</code> and so on.'
+      }
+    },
+    {
+      id: "eD2kuEfvgm",
+      type: "paragraph",
+      data: {
+        text:
+          "Clean data is useful to sanitize, validate and process on the backend."
+      }
+    },
+    {
+      id: "N8bOHTfUCN",
+      type: "delimiter",
+      data: {}
+    },
+    {
+      id: "IpKh1dMyC6",
+      type: "paragraph",
+      data: {
+        text:
+          "We have been working on this project more than three years. Several large media projects help us to test and debug the Editor, to make it's core more stable. At the same time we significantly improved the API. Now, it can be used to create any plugin for any task. Hope you enjoy. 😏"
+      }
+    }
+  ]
+};
 export function EditorSkeleton() {
   return (
     <div className="flex flex-col px-4 mx-autogap-10">
@@ -52,7 +163,7 @@ export async function fileDownloadHandler(content, fileName) {
   window.URL.revokeObjectURL(url);
   document.body.removeChild(element);
 }
-
+type dataType = OutputData
 interface EditorProps {
   post: Pick<PostTable, "id" | "title" | "content" | "published">
 }
@@ -64,7 +175,8 @@ type BlockType = 'header' | 'paragraph' | 'image'; // Define the possible block 
 // function getBlockTransformer (block: any): BlockType {
   
 // }
-export default function Editor ( {post}: EditorProps) {
+
+export default function Editor ( {post }: EditorProps) {
 
   const { register, handleSubmit } = useForm<FormData>({
     resolver: zodResolver(postPatchSchema),
@@ -74,16 +186,27 @@ export default function Editor ( {post}: EditorProps) {
   const ref = useRef<EditorJS>();
   const router = useRouter()
 
-
-  const [editorData, setEditorData] = useState<OutputData>(post.content);
-  const [output, setOutput] = useState('');
+//  const [editorData, setEditorData] = useState<OutputData>()
+  const [isPreview, setPreview] = useState<OutputData>(exampleData);
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const [isSaving, setIsSaving] = useState<boolean>(false)
+  const [isEditMode, setIsEditMode] = useState<boolean>(false)
+
+
 
   // const [title, setTitle] = useState<string>("");
   // const [content, setContent] = useState<OutputData>();
   // const [isPublished, setPublished] = useState<boolean>(false)
   // const [blocks, setBlocks] = useState<OutputData>();
+  function toggleEditMode() {
+		if (isEditMode) {
+			setIsEditMode(false);
+			console.log("Edit mode is now disabled");
+		} else {
+			setIsEditMode(true);
+			console.log("Edit mode is now enabled");
+		}
+	}
 
 
   const initEditor = 
@@ -102,9 +225,9 @@ export default function Editor ( {post}: EditorProps) {
           const InlineCode = (await import("@editorjs/inline-code")).default
           
           
-          const body = postPatchSchema.parse(post)
-
-            if (!ref.current) {
+         const body = isPreview
+            
+            if (!ref.current  && isEditMode === true ) {
               const editor = new EditorJS ({
                 onReady: () => {
                   ref.current = editor
@@ -119,7 +242,7 @@ export default function Editor ( {post}: EditorProps) {
                 //   }
                 // },
                 holder: "editor",
-                data: editorData,
+                data: body,
                 // tools,
                 tools: {
                   code: Code,
@@ -131,7 +254,7 @@ export default function Editor ( {post}: EditorProps) {
                   linkTool: {
                     class: LinkTool,
                     config: {
-                      endpoint: 'https://google.com', // Your backend endpoint for url data fetching,
+                      endpoint: 'https://example.com', // Your backend endpoint for url data fetching,
                     },
                     inlineToolbar: true
                   },
@@ -139,7 +262,13 @@ export default function Editor ( {post}: EditorProps) {
                   inlineCode: InlineCode,
                   image: {
                     class: Image,
-                    inlineToolbar: true
+                    config: {
+                      uploader: {
+                        uploadByFile(file) {
+                          return uploadImage(file);
+                        },
+                      },
+                    },
                   },
                   paragraph: {
                     class: Paragraph,
@@ -162,7 +291,7 @@ export default function Editor ( {post}: EditorProps) {
         }, [])
       
         useEffect(() => {
-          if (isMounted) {
+          if (isMounted && isEditMode === true) {
             initEditor()
       
             return () => {
@@ -170,24 +299,20 @@ export default function Editor ( {post}: EditorProps) {
               ref.current = undefined
             }
           }
-        }, [isMounted, initEditor]);
+        }, [isMounted, initEditor, isEditMode]);
 
         if (!isMounted) {
           return null
         }
 
-   
+
       async function onSubmit(data: FormData) {
         setIsSaving(true)
-    console.log('form data', data)
+    // console.log('form data', data)
         const blockData = await ref.current?.save()
-
-          console.log(blockData)
-          if (blockData) {
-            const mdx = await parseToMd(blockData)
-            console.log(mdx)
-          }
-    
+        if (blockData ) { setPreview(blockData) }
+        
+          
         setIsSaving(false)
         router.refresh()
     
@@ -196,47 +321,97 @@ export default function Editor ( {post}: EditorProps) {
         //   description: "Your post has been saved.",
         // })
       }
-    
-
-      
+      const TextParser = <EditorTextParser editorData={isPreview} />
+      const Editor =   <div id='editor' className="min-h-[500px] h-full w-full text-left indent-2" />
+      const RenderToggle = () => {
+        if (isEditMode) {
+          return Editor
+        } 
+        return TextParser
+      }
+      const buttonmode =  () => {
+        if (isEditMode) {
+          return 'draft'
+        }
+        return 'edit'
+      } 
 
       return (
         <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col px-4 mx-auto gap-10">
-        <div className="flex w-full items-center justify-between">
-          <div className="flex items-center space-x-10">
+        <div 
+        className="flex flex-col mx-auto px-4 gap-10 w-full h-[calc(100vh-120px)] overflow-y-auto overflow-x-hidden">
+        <div className="flex w-full items-center justify-between gap-6 border-b border-muted-foreground pb-4">
+          <div className="flex items-center gap-2">
           <Link href='/'
-          className={cn(buttonVariants({variant: 'ghost'}))}
+          className={cn(buttonVariants())}
           >
             <>
             <Icons.chevronLeft className="mr-2 h-4 w-4" />
             Back
             </>
           </Link>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-lg text-muted-foreground leading-loose">
           {post.published ? 'Published' : 'Draft'}
           </p>
           </div>
-          <button type="submit" className={cn(buttonVariants())}>
+          <div className="flex items-center gap-6">
+          <button type="submit" className={cn(buttonVariants({variant: 'secondary'}))}>
             {isSaving && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
             <span>Save</span>
           </button>
+          
+          <Button onClick={toggleEditMode}  className={cn(buttonVariants({variant: buttonmode()}),
+          // `hover: ${isEditMode ? 'bg-primary' : 'bg-secondary'}`
+          )}>
+            {isEditMode ? (
+               <Icons.eye className="mr-2 h-4 w-4" />
+            ) :
+            (
+              <Icons.pencil className="mr-2 h-4 w-4" />
+            )
+            }
+            <span>{isEditMode ? 'Preview' : 'Edit'}</span>
+          </Button>
+          </div>
         </div>
-        <div className="prose prose-stone space-y-10  w-full dark:prose-invert">
-        <TextareaAutosize 
+   
+        {/* <TextareaAutosize 
+        // style={{height: '60px', important: true }}
         className="w-full resize-none appearance-none overflow-hidden bg-transparent text-3xl text-gray-700/80 font-bold focus:outline-none"
         autoFocus
         id="title"
         defaultValue={post.title}
         placeholder="Enter your post title"
         {...register("title")}
-        />
+        /> */}
+        <div>
+        <textarea
+        readOnly = {!isEditMode} 
+        autoFocus ={!isEditMode}
+        id="title"
+        defaultValue={post.title}
+        placeholder="Enter your post title"
+         className={cn(
+          "w-full pl-4 content-center resize-none appearance-none overflow-hidden bg-transparent text-4xl text-gray-700/80 font-bold focus:outline-none h-12 ",
+          !isEditMode && "cursor-not-allowed text-gray-900"
+         )}
+          {...register("title")}
+          />
+      
          <Suspense fallback={<EditorSkeleton />}>
-          <div id='editor' className="min-h-[500px]" />
+         {/* {
+            isEditMode  && initEditor !== null &&  */}
+            {RenderToggle()}
+            {/* // } */}
       </Suspense> 
+      </div>
+      {/* {
+            isEditMode  && initEditor !== null &&    
+        <EditorTextParser editorData={editorData} />
+      } */}
       {/* <p className="text-sm text-gray-500">
         Use{" "}
         <kbd className="rounded-md border bg-muted px-1 text-xs uppercase">
@@ -245,7 +420,7 @@ export default function Editor ( {post}: EditorProps) {
         to open the command menu.
       </p> */}
         </div>
-        </div>
+     
       </form>
         </>
       )}
