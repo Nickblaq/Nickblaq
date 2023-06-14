@@ -21,13 +21,13 @@ const externalLinks = [
     icon: <Twitter />,
     show: true
   },
-  {
-    id: 3,
-    name: 'Instagram',
-    link: 'https://instagram.com/nickblaq',
-    icon: <Instagram />,
-    show: true
-  },
+  // {
+  //   id: 3,
+  //   name: 'Instagram',
+  //   link: 'https://instagram.com/nickblaq',
+  //   icon: <Instagram />,
+  //   show: true
+  // },
 ]
 
 const ExternalLinks = () => {
