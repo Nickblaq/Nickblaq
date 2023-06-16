@@ -11,3 +11,4 @@ export default function EditorTextParser({ editorData }) {
   
     return <div className="prose prose-quoteless prose-neutral dark:prose-invert h-full overflow-y-auto overflow-x-hidden text-left indent-2">{parse(html.join(""))}</div>;
   }
+

@@ -1,0 +1,30 @@
+ure! To save the processed markdown files in the ./my-app/content directory with a different filename, you can modify the targetFile variable to use a different filename format. Here's an example:
+
+📋 Copy code
+const fs = require('fs');
+const path = require('path');
+const matter = require('remark-frontmatter');
+const unified = require('unified');
+const vfile = require('vfile');
+const glob = require('glob');
+
+const rootDir = './my-app/content'; // set the root directory for your markdown files
+const markdownDir = './my-app/content'; // set the directory where processed markdown files will be saved
+
+const processor = unified().use(matter);
+
+const files = glob.sync(`${rootDir}/**/*.md`);
+
+files.forEach((file) => {
+  const contents = fs.readFileSync(file, 'utf8');
+  const vfileObj = vfile({ path: file, contents });
+  processor.parse(vfileObj);
+  const { dir, name } = path.parse(file);
+  const targetDir = path.join(markdownDir, dir.replace(rootDir, ''));
+  const targetFile = path.join(targetDir, `blog-${name}.md`); // modify this line to use the desired filename format
+  fs.mkdirSync(targetDir, { recursive: true });
+  fs.writeFileSync(targetFile, contents);
+});
+In this modified script, I've changed the targetFile variable to use the name variable, which represents the filename of the original markdown file, to generate the new filename. Specifically, the new filename will be blog-{name}.md, where {name} is replaced with the original filename.
+
+So, for example, if you have a markdown file located at ./my-app/content/blog/post-1.md, the processed file will be saved at ./my-app/content/blog/blog-post-1.md.

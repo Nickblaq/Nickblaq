@@ -310,7 +310,17 @@ export default function Editor ( {post }: EditorProps) {
         setIsSaving(true)
     // console.log('form data', data)
         const blockData = await ref.current?.save()
-        if (blockData ) { setPreview(blockData) }
+        if (blockData ) {
+          const past = await parseToMd(blockData)
+          const today = new Date();
+          const dd = String(today.getDate()).padStart(2, '0');
+          const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+          const yyyy = today.getFullYear();
+          const title = data.title
+          await fileDownloadHandler(past, `${yyyy}-${mm}-${dd}.md`)
+          console.log(past)
+           setPreview(blockData) 
+          }
         
           
         setIsSaving(false)
@@ -396,7 +406,7 @@ export default function Editor ( {post }: EditorProps) {
         placeholder="Enter your post title"
          className={cn(
           "w-full pl-4 content-center resize-none appearance-none overflow-hidden bg-transparent text-4xl text-gray-700/80 font-bold focus:outline-none h-12 ",
-          !isEditMode && "cursor-not-allowed text-gray-900"
+          !isEditMode && "cursor-not-allowed"
          )}
           {...register("title")}
           />

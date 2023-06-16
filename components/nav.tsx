@@ -70,11 +70,11 @@ export default function Nav() {
               <p>Blog</p>
             </li>
             </Link>
-            <Link href='/craft'>
+            {/* <Link href='/craft'>
             <li className='cursor-pointer'>
               <p>Craft</p>
             </li>
-            </Link>
+            </Link> */}
       </ul>
       <ExternalLinks />
       </div>
