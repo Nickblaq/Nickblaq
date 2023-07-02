@@ -11,7 +11,7 @@ export const metadata: Metadata= {
 export default async function BlogPage() {
   return (
     <section 
-    className="flex flex-col gap-10 leading-loose"
+    className="flex flex-col gap-10 leading-loose min-h-[75vh]"
     >
       <h1 className="font-bold text-4xl font-serif mb-5">Blog</h1>
       {allBlogs

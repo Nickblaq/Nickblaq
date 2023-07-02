@@ -22,7 +22,7 @@ export default async function Blog({ params }) {
 
 
   return (
-    <section className='px-6 mx-auto prose'>
+    <section className='p-6 mx-auto prose'>
       <script type="application/ld+json">
         {JSON.stringify(post.structuredData)}
       </script>

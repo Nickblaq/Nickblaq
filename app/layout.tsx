@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
         <main className='container mx-auto px-2'>
           {children}
           </main>
-       
+       <Footer />
           {/* <Analytics /> */}
         </body>
     </html>
