@@ -2,69 +2,13 @@
 
 import BlurImage from '@/components/blurimage';
 import nick from '../public/nick.jpg'
-import Footer from '@/components/footer';
 import Link from 'next/link';
-
-import { OutputData } from "@editorjs/editorjs";
-
-type parser = {
-    parse(OutputData: OutputData): Array<string>
-}
-
-const jsondata = {
-  "time": 1589987527499,
-  "blocks": [
-    {
-      "type": "embded",
-      "data": {
-        "service": "youtube",
-        "source": "https://www.youtube.com/watch?v=JbqGYgI3XY0",
-        "embed": "https://www.youtube.com/embed/JbqGYgI3XY0",
-        "width": 580,
-        "height": 320,
-        "caption": ""
-      }
-    },
-    {
-      "type": "image",
-      "data": {
-        "file": {
-          "url": "http://localhost/uploads/images/1.jpg"
-        },
-        "caption": "",
-        "withBorder": false,
-        "stretched": false,
-        "withBackground": false
-      }
-    },
-    {
-      "type": "header",
-      "data": {
-        "text": "test",
-        "level": 2
-      }
-    }
-  ],
-  "version": "2.17.0"
-};
-
-
-
-
-
-
   
 
 export default async function Home() {
-
-  // const myParser = parser();
-  // const parsedBlocks =  myParser.parse(jsondata);
-  // console.log(parsedBlocks)
-
   return (
     <>
-
-    <main className="px-6 max-w-6xl w-full  mx-auto leading-loose tracking-wider text-base md:text-xl overflow-y-auto lg:flex items-center lg:h-[80vh] justify-center">
+    <section className="px-6 max-w-6xl w-full leading-loose tracking-wider text-base md:text-xl lg:flex md:items-center">
     <div className='flex flex-col md:flex-row md:justify-between items-center'>
       <div className='max-w-xl mx-auto md:w-5/12  md:h-auto block'>
       <div className='rounded-xl bg-origin-border overflow-hidden'>
@@ -76,11 +20,9 @@ export default async function Home() {
       alt='Nickblaq' />
       </div>
       </div>
-      
-   
       <div className='w-full md:w-6/12 pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-10 text-xl md:font-medium font-normal leading-loose underline-offset-2'>
         <h1 className='leading-10 mt-10 pb-2 text-3xl md:text-5xl font-bold md:font-extrabold tracking-normal'>
-        Hi there, 
+        Hi there. 
         </h1>
         <h2 className=' py-6'>
         I&apos;m <strong>Nicholas Okoro</strong> and I love crafting impeccable accessable <strong>User Interface</strong> and coding things on the web.
@@ -93,8 +35,7 @@ export default async function Home() {
         <p>Interested in other things? Reach out by email me at <strong><a className='underline' href="mailto:nickblaq@nickblaq.xyz" target='_blank' rel='noreferrer'>nickblaq@nickblaq.xyz</a></strong>.</p>
       </div>
       </div>
-    </main>
-    <Footer />
+    </section>
     </>
   )
 }

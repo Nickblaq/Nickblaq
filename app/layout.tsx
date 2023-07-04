@@ -59,10 +59,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className='text-neutral-950 bg-yellow-700/5 dark:text-white dark:bg-[#111010] antialiased '>
+    <html className='brightness-75' lang="en" suppressHydrationWarning={true}>
+      <body className='antialiased'>
         <Nav />
-        <main className='container mx-auto px-2'>
+        <main className='container'>
           {children}
           </main>
        <Footer />

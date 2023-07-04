@@ -3,9 +3,9 @@
 export default async function Page() {
     return (
         <>
-        <div className="px-6 mx-auto">
-            <h1 className="text-4xl text-left font-bold">Craft</h1>
-        </div>
+        <section>
+        <h1 className="font-bold text-4xl font-serif mb-5 text-left">Craft</h1>
+        </section>
         </>
     )
 }

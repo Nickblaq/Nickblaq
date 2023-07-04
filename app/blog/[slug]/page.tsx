@@ -34,7 +34,6 @@ export default async function Blog({ params }) {
           {post.publishedAt}
         </div>
         <div className="h-[0.2em] bg-neutral-50 dark:bg-neutral-800 mx-2" />
-        
       </div>
       <Mdx code={post.body.code} />
     </section>
