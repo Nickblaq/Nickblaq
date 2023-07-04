@@ -11,6 +11,8 @@
     --background-end-rgb: 255, 255, 255;
   
 
+    --color-grid: rgba(39, 39, 42, 0.25);
+
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
 
@@ -47,6 +49,10 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 24 24 27;
     --background-end-rgb: 0, 0, 0;
+
+
+
+    --color-grid: rgba(39, 39, 42, 0.25);
 
 
 
@@ -106,20 +112,26 @@ a {
   text-decoration: none;
 }
 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+ 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      rgb(var(--background-end-rgb)),
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading='lazy'] {
+    clip-path: inset(0.6px);
+  }
 }
 
 /* @layer base {

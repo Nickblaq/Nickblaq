@@ -3,15 +3,18 @@
 import BlurImage from '@/components/blurimage';
 import nick from '../public/nick.jpg'
 import Link from 'next/link';
+import Nav from '@/components/nav';
+import Footer from '@/components/footer';
   
 
 export default async function Home() {
   return (
     <>
+      {/* <Nav /> */}
     <section className="px-6 max-w-6xl w-full leading-loose tracking-wider text-base md:text-xl lg:flex md:items-center">
     <div className='flex flex-col md:flex-row md:justify-between items-center'>
       <div className='max-w-xl mx-auto md:w-5/12  md:h-auto block'>
-      <div className='rounded-xl bg-origin-border overflow-hidden'>
+      <div className='rounded-xl overflow-hidden'>
       <BlurImage 
       className='bg-cover' 
        width={716} 
@@ -32,10 +35,11 @@ export default async function Home() {
        <strong><a className='underline' href="https://github.com/nickblaq"  target='_blank' rel='noreferrer'>coding</a></strong>{" "}
        you can find me on <strong><a className='underline' href="https://twitter.com/nickblaq" target='_blank' rel='noreferrer'>Twitter</a></strong>.
         </h2>
-        <p>Interested in other things? Reach out by email me at <strong><a className='underline' href="mailto:nickblaq@nickblaq.xyz" target='_blank' rel='noreferrer'>nickblaq@nickblaq.xyz</a></strong>.</p>
+        {/* <p>Interested in other things? Reach out by email me at <strong><a className='underline' href="mailto:nickblaq@nickblaq.xyz" target='_blank' rel='noreferrer'>nickblaq@nickblaq.xyz</a></strong>.</p> */}
       </div>
       </div>
     </section>
+    {/* <Footer /> */}
     </>
   )
 }
